@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_06e3s5v" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="17.7.1">
+  <bpmn:process id="Process_1iklecv" isExecutable="false">
+    <bpmn:subProcess id="Activity_0cmfqjv" name="Compras" />
+    <bpmn:subProcess id="Activity_1d2akl8" name="Estoque" />
+    <bpmn:subProcess id="Activity_1tz533w" name="Vendas" />
+    <bpmn:subProcess id="Activity_0nld7i9" name="Financeiro" />
+    <bpmn:subProcess id="Activity_0vhvenc" name="Contábil" />
+    <bpmn:textAnnotation id="TextAnnotation_1xr6m9t">
+      <bpmn:text>Monitora e realiza os processos de aquisição de produtos e serviços</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0ni3ode" associationDirection="None" sourceRef="Activity_0cmfqjv" targetRef="TextAnnotation_1xr6m9t" />
+    <bpmn:textAnnotation id="TextAnnotation_0hpszvk">
+      <bpmn:text>Controla e informa o inventário da empresa, seja em relação a bens tangíveis quanto intangíveis (ex: licenças de software)</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0o5j7lh" associationDirection="None" sourceRef="Activity_1d2akl8" targetRef="TextAnnotation_0hpszvk" />
+    <bpmn:textAnnotation id="TextAnnotation_0timmmr">
+      <bpmn:text>Capta clientes, elenca requisitos, precifica e efetua a venda do serviço de implementação de ERP</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1lctmt1" associationDirection="None" sourceRef="Activity_1tz533w" targetRef="TextAnnotation_0timmmr" />
+    <bpmn:textAnnotation id="TextAnnotation_19z7ph7">
+      <bpmn:text>Apoia as transações na empresa em relação ao cumprimento dos requisitos legais</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0hfh8ft" associationDirection="None" sourceRef="Activity_0vhvenc" targetRef="TextAnnotation_19z7ph7" />
+    <bpmn:textAnnotation id="TextAnnotation_1ynr6o3">
+      <bpmn:text>Monitora o fluxo de caixa e transações, atual e futuro. Além de realizar relatórios</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1upo8h4" associationDirection="None" sourceRef="Activity_0nld7i9" targetRef="TextAnnotation_1ynr6o3" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1iklecv">
+      <bpmndi:BPMNShape id="Activity_17pf54s_di" bpmnElement="Activity_0cmfqjv">
+        <dc:Bounds x="190" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1do9o55_di" bpmnElement="Activity_1d2akl8">
+        <dc:Bounds x="330" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18dwo6t_di" bpmnElement="Activity_1tz533w">
+        <dc:Bounds x="470" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0e0q0wq_di" bpmnElement="Activity_0nld7i9">
+        <dc:Bounds x="610" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_041dlan_di" bpmnElement="Activity_0vhvenc">
+        <dc:Bounds x="750" y="80" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1xr6m9t_di" bpmnElement="TextAnnotation_1xr6m9t">
+        <dc:Bounds x="165" y="180" width="149" height="60" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0hpszvk_di" bpmnElement="TextAnnotation_0hpszvk">
+        <dc:Bounds x="314" y="180" width="156" height="98" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0timmmr_di" bpmnElement="TextAnnotation_0timmmr">
+        <dc:Bounds x="470" y="180" width="120" height="100" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_19z7ph7_di" bpmnElement="TextAnnotation_19z7ph7">
+        <dc:Bounds x="750" y="180" width="130" height="90" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1ynr6o3_di" bpmnElement="TextAnnotation_1ynr6o3">
+        <dc:Bounds x="600" y="180" width="130" height="70" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0ni3ode_di" bpmnElement="Association_0ni3ode">
+        <di:waypoint x="243" y="160" />
+        <di:waypoint x="244" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0o5j7lh_di" bpmnElement="Association_0o5j7lh">
+        <di:waypoint x="380" y="160" />
+        <di:waypoint x="380" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1lctmt1_di" bpmnElement="Association_1lctmt1">
+        <di:waypoint x="520" y="160" />
+        <di:waypoint x="520" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0hfh8ft_di" bpmnElement="Association_0hfh8ft">
+        <di:waypoint x="800" y="160" />
+        <di:waypoint x="800" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1upo8h4_di" bpmnElement="Association_1upo8h4">
+        <di:waypoint x="660" y="160" />
+        <di:waypoint x="660" y="180" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_05vhtps">
+    <bpmndi:BPMNPlane id="BPMNPlane_0x25fb1" bpmnElement="Activity_0cmfqjv" />
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1o2i81x">
+    <bpmndi:BPMNPlane id="BPMNPlane_0kt25on" bpmnElement="Activity_1d2akl8" />
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1niiby8">
+    <bpmndi:BPMNPlane id="BPMNPlane_1c3hxhk" bpmnElement="Activity_1tz533w" />
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_0ky2hue">
+    <bpmndi:BPMNPlane id="BPMNPlane_1kvblnv" bpmnElement="Activity_0nld7i9" />
+  </bpmndi:BPMNDiagram>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_0ttghow">
+    <bpmndi:BPMNPlane id="BPMNPlane_1pjy32m" bpmnElement="Activity_0vhvenc" />
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>

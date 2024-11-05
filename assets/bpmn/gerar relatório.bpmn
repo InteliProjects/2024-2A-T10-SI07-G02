@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Definitions_0nobv9w" targetNamespace="http://bpmn.io/schema/bpmn" exporter="bpmn-js (https://demo.bpmn.io)" exporterVersion="17.7.1">
+  <bpmn:collaboration id="Collaboration_1yv5qm5">
+    <bpmn:participant id="Participant_1gz9wyv" name="Gerar relatório" processRef="Process_1gv21r2" />
+    <bpmn:textAnnotation id="TextAnnotation_17wbczm">
+      <bpmn:text>Requisição de relatório financeiro</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1633mwt">
+      <bpmn:text>Caixa</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_02npjac">
+      <bpmn:text>Enviar o relatório</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1582582" associationDirection="None" sourceRef="StartEvent_17klqvs" targetRef="TextAnnotation_17wbczm" />
+    <bpmn:association id="Association_1o5s0g3" associationDirection="None" sourceRef="DataStoreReference_06jlie6" targetRef="TextAnnotation_1633mwt" />
+    <bpmn:association id="Association_0exqvk2" associationDirection="None" sourceRef="Event_0v30sg2" targetRef="TextAnnotation_02npjac" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_1gv21r2" isExecutable="false">
+    <bpmn:startEvent id="StartEvent_17klqvs">
+      <bpmn:outgoing>Flow_0avyhcl</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_04srhg6" />
+    </bpmn:startEvent>
+    <bpmn:serviceTask id="Activity_19cvpj9" name="Consultar as transações realizadas">
+      <bpmn:incoming>Flow_0avyhcl</bpmn:incoming>
+      <bpmn:outgoing>Flow_0ps0kcq</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_15irvxb">
+        <bpmn:targetRef>DataStoreReference_06jlie6</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:serviceTask>
+    <bpmn:dataStoreReference id="DataStoreReference_06jlie6" />
+    <bpmn:endEvent id="Event_0v30sg2">
+      <bpmn:incoming>Flow_0ps0kcq</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_01mu5h8" />
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_0avyhcl" sourceRef="StartEvent_17klqvs" targetRef="Activity_19cvpj9" />
+    <bpmn:sequenceFlow id="Flow_0ps0kcq" sourceRef="Activity_19cvpj9" targetRef="Event_0v30sg2" />
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1yv5qm5">
+      <bpmndi:BPMNShape id="Participant_1gz9wyv_di" bpmnElement="Participant_1gz9wyv" isHorizontal="true">
+        <dc:Bounds x="156" y="62" width="600" height="250" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1j5q2rz_di" bpmnElement="StartEvent_17klqvs">
+        <dc:Bounds x="232" y="172" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0bysnvj_di" bpmnElement="Activity_19cvpj9">
+        <dc:Bounds x="330" y="150" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_06jlie6_di" bpmnElement="DataStoreReference_06jlie6">
+        <dc:Bounds x="465" y="75" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_030k9ds_di" bpmnElement="Event_0v30sg2">
+        <dc:Bounds x="472" y="172" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0avyhcl_di" bpmnElement="Flow_0avyhcl">
+        <di:waypoint x="268" y="190" />
+        <di:waypoint x="330" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0ps0kcq_di" bpmnElement="Flow_0ps0kcq">
+        <di:waypoint x="430" y="190" />
+        <di:waypoint x="472" y="190" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1582582_di" bpmnElement="Association_1582582">
+        <di:waypoint x="250" y="172" />
+        <di:waypoint x="250" y="155" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1o5s0g3_di" bpmnElement="Association_1o5s0g3">
+        <di:waypoint x="515" y="100" />
+        <di:waypoint x="530" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0exqvk2_di" bpmnElement="Association_0exqvk2">
+        <di:waypoint x="508" y="189" />
+        <di:waypoint x="530" y="187" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_17wbczm_di" bpmnElement="TextAnnotation_17wbczm">
+        <dc:Bounds x="200" y="110" width="140" height="45" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_15irvxb_di" bpmnElement="DataOutputAssociation_15irvxb">
+        <di:waypoint x="380" y="150" />
+        <di:waypoint x="380" y="100" />
+        <di:waypoint x="465" y="100" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="TextAnnotation_1633mwt_di" bpmnElement="TextAnnotation_1633mwt">
+        <dc:Bounds x="530" y="85" width="100.0000033517384" height="29.99725425590335" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_02npjac_di" bpmnElement="TextAnnotation_02npjac">
+        <dc:Bounds x="530" y="168" width="130" height="38" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
